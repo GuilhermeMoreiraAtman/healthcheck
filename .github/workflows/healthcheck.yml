@@ -1,4 +1,4 @@
-name: Healthcheck HelliUs
+name: Healthcheck Helliis
 
 on:
   schedule:
