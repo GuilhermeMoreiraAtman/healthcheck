@@ -1,0 +1,18 @@
+name: Healthcheck HelliUs
+
+on:
+  schedule:
+    - cron: "*/1 * * * *" # a cada 1 min (UTC)
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node healthcheck.js
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
