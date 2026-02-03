@@ -51,7 +51,6 @@ async function postSlack(text) {
   const problems = results.filter(x => !x.r.ok);
 
   if (problems.length === 0) {
-    await postSlack(`✅ *Healthcheck OK*\n${lines.join("\n")}`);
     process.exit(0);
   }
 
