@@ -3,6 +3,7 @@ const ENDPOINTS = [
   "https://df.hellius.atmansystems.com/api/ping",
 ];
 
+
 const webhook = process.env.SLACK_WEBHOOK_URL;
 
 if (!webhook) {
